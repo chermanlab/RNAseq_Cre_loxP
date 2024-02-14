@@ -1,0 +1,30 @@
+#!/usr/bin/sh
+#SBATCH -o install.out
+#SBATCH -e install.err
+#SBATCH --job-name="Conda install"
+#SBATCH --time=5:00
+#SBATCH --mem=50GB 
+
+source /storage/herman/home/xwen/miniconda3/etc/profile.d/conda.sh
+
+conda init bash
+
+#conda create -n bcl2fastq2 python=3
+#conda activate bcl2fastq2
+#conda env update --prefix /storage/herman/home/xwen/miniconda3/envs/bcl2fastq2 --file /storage/herman/home/xwen/RNAseq/bcl2fastq2.yaml --prune
+#conda deactivate
+
+#conda create -n fastp python=3 
+#conda activate fastp
+#conda env update --prefix /storage/herman/home/xwen/miniconda3/envs/fastp --file /storage/herman/home/xwen/RNAseq/fastp.yaml --prune
+#conda deactivate
+
+#conda create -n salmon python=3     
+#conda activate salmon
+#conda env update --prefix /storage/herman/home/xwen/miniconda3/envs/salmon --file /storage/herman/home/xwen/RNAseq/salmon.yaml --prune
+#conda deactivate
+
+conda create -n trim_fasta python=3
+conda activate trim_fasta
+conda env update --prefix /storage/herman/home/xwen/miniconda3/envs/trim_fasta --file /storage/herman/home/xwen/RNAseq/trim_fasta.yaml --prune
+conda deactivate
